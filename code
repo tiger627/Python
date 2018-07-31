@@ -71,3 +71,24 @@ if results == [
     print('测试通过!')
 else:
     print('测试失败!')
+    
+############################### map & reduce##############################
+
+
+    def normalize(s):
+    s = s.lower()
+    L = s[0].upper()
+    L = L + s[1:]
+
+    return L
+
+
+
+a = 'hello'
+L1 = ['adam', 'LISA', 'barT']
+b = a[0]
+print(b)
+
+print(normalize(a))
+
+print(list(map(normalize,L1)))

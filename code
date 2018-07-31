@@ -1,0 +1,73 @@
+**Function usage practice
+
+def f1(a,b,c=0,*args,**kwargs):
+    print('a=',a,'b=',b,'c=',c,'args=',args,'kwargs=',kwargs)
+
+def f2(a,b,c,d,*args):
+    print('a=',a,'b=',b,'args=',args)
+
+def product(*numbers):
+    product = 1
+    for number in numbers:
+        product = product * number
+    return  product
+
+
+def trim(s):
+    while s[0] == ' ':
+        s = s[1:]
+    while s[-1] == ' ':
+        s = s[:-1]
+
+    return s
+
+def findMinAndMax(L):
+    if len(L) == 0:
+        return (None,None)
+    else:
+        max = L[0]
+        min = L[0]
+        for i in L:
+            if i < max:
+                max = max
+            else:
+                max = i
+
+            if i < min:
+                min = i
+        return (min, max)
+
+def triangles():
+    L = [1]
+    while True :
+        yield L
+        if len(L) < 2:
+            L = [1,1]
+        else:
+            L = [L[i] + L[i+1] for i in range(len(L)-1)]
+            L.append(1)
+            L.insert(0,1)
+
+n = 0
+results = []
+for t in triangles():
+    print(t)
+    results.append(t)
+    n = n + 1
+    if n == 10:
+        break
+if results == [
+    [1],
+    [1, 1],
+    [1, 2, 1],
+    [1, 3, 3, 1],
+    [1, 4, 6, 4, 1],
+    [1, 5, 10, 10, 5, 1],
+    [1, 6, 15, 20, 15, 6, 1],
+    [1, 7, 21, 35, 35, 21, 7, 1],
+    [1, 8, 28, 56, 70, 56, 28, 8, 1],
+    [1, 9, 36, 84, 126, 126, 84, 36, 9, 1]
+]:
+    print('测试通过!')
+else:
+    print('测试失败!')

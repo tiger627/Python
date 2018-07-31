@@ -92,3 +92,14 @@ print(b)
 print(normalize(a))
 
 print(list(map(normalize,L1)))
+
+
+
+
+from functools import  reduce
+def product(l):
+    return reduce(lambda x,y : x * y, l)
+
+
+a = [1,2,3,4,5]
+print(product(a))

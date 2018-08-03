@@ -188,3 +188,16 @@ if s.resolution == 786432:
     print('测试通过!')
 else:
     print('测试失败!')
+    
+    
+#####################################error handling#######################    
+try:
+    a = input()
+    print('Try...')
+    print(int(a))
+
+except ValueError as e:
+    print('ValueError',e)
+
+finally:
+    print('End')
